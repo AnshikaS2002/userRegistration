@@ -53,11 +53,11 @@ public class UserRegistration {
     }
 
     void validatePassword(String pass) {
-        String passRegex = ".{8,}";
+        String passRegex = ".*[A-Z].*";
         Pattern pattern = Pattern.compile(passRegex);
         Matcher matcher = pattern.matcher(pass);
 
-        if (matcher.matches()) {
+        if (matcher.matches() && pass.length() >= 8) {
             System.out.println("Valid password");
         } else {
             System.out.println("Invalid password");
