@@ -15,4 +15,17 @@ public class UserRegistration {
             System.out.println("Invalid first name");
         }
     }
+
+    void validateLastName(String lastName) {
+        String nameRegex = "[A-Z][a-z]{2,}";
+        Pattern pattern = Pattern.compile(nameRegex);
+        Matcher matcher = pattern.matcher(lastName);
+
+        if (matcher.matches()) {
+            System.out.println("Valid last name");
+        } else {
+            System.out.println("Invalid last name");
+        }
+    }
+
 }

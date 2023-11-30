@@ -11,8 +11,14 @@ public class Main {
         String firstName = scanner.next();
 
         RegistrationFields registrationFields = new RegistrationFields();
-        registrationFields.setFirstName(firstName);
 
+        registrationFields.setFirstName(firstName);
         userRegistration.validateFirstName(registrationFields.getFirstName());
+
+        System.out.print("Enter last name : ");
+        String lastName = scanner.next();
+
+        registrationFields.setLastName(lastName);
+        userRegistration.validateLastName(registrationFields.getLastName());
     }
 }
