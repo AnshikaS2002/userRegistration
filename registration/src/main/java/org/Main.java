@@ -33,5 +33,11 @@ public class Main {
         registrationFields.setPhoneNum(phoneNum);
         userRegistration.validatePhoneNum(registrationFields.getPhoneNum());
 
+        System.out.print("Enter password: ");
+        String pass = scanner.next();
+
+        registrationFields.setPassword(pass);
+        userRegistration.validatePassword(registrationFields.getPassword());
+
     }
 }

@@ -45,12 +45,22 @@ public class UserRegistration {
         Pattern pattern = Pattern.compile(numRegex);
         Matcher matcher = pattern.matcher(phoneNum);
 
-        System.out.println(phoneNum);
-
         if (matcher.matches()) {
             System.out.println("Valid Phone num");
         } else {
             System.out.println("Invalid phone num");
+        }
+    }
+
+    void validatePassword(String pass) {
+        String passRegex = ".{8,}";
+        Pattern pattern = Pattern.compile(passRegex);
+        Matcher matcher = pattern.matcher(pass);
+
+        if (matcher.matches()) {
+            System.out.println("Valid password");
+        } else {
+            System.out.println("Invalid password");
         }
     }
 

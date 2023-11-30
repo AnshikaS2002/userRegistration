@@ -7,9 +7,7 @@ public class RegistrationFields {
     private String phoneNum;
     private String pass;
 
-    String
-
-    getFirstName() {
+    String getFirstName() {
         return this.firstName;
     }
 
@@ -41,5 +39,12 @@ public class RegistrationFields {
         this.phoneNum = phoneNum;
     }
 
+    String getPassword() {
+        return this.pass;
+    }
+
+    void setPassword(String pass) {
+        this.pass = pass;
+    }
 
 }
