@@ -6,11 +6,10 @@ public class Main {
     public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
+        RegistrationFields registrationFields = new RegistrationFields();
 
         System.out.print("Enter first name : ");
         String firstName = scanner.next();
-
-        RegistrationFields registrationFields = new RegistrationFields();
 
         registrationFields.setFirstName(firstName);
         userRegistration.validateFirstName(registrationFields.getFirstName());
@@ -20,5 +19,11 @@ public class Main {
 
         registrationFields.setLastName(lastName);
         userRegistration.validateLastName(registrationFields.getLastName());
+
+        System.out.print("Enter email : ");
+        String email = scanner.next();
+
+        registrationFields.setEmail(email);
+        userRegistration.validateEmail(registrationFields.getEmail());
     }
 }

@@ -28,4 +28,16 @@ public class UserRegistration {
         }
     }
 
+    void validateEmail(String email) {
+        String emailRegex = "[a-z0-9]+(\\.[a-z0-9]*)*@[a-z0-9]+\\.[a-z]+(\\.[a-z]*)*";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+
+        if (matcher.matches()) {
+            System.out.println("Valid email");
+        } else {
+            System.out.println("Invalid email");
+        }
+    }
+
 }
