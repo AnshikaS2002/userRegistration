@@ -4,8 +4,12 @@ public class RegistrationFields {
     private String firstName;
     private String lastName;
     private String email;
+    private String phoneNum;
+    private String pass;
 
-    String getFirstName() {
+    String
+
+    getFirstName() {
         return this.firstName;
     }
 
@@ -28,5 +32,14 @@ public class RegistrationFields {
     void setEmail(String email) {
         this.email = email;
     }
+
+    String getPhoneNum() {
+        return this.phoneNum;
+    }
+
+    void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
 
 }

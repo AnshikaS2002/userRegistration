@@ -22,8 +22,16 @@ public class Main {
 
         System.out.print("Enter email : ");
         String email = scanner.next();
+        scanner.nextLine();
 
         registrationFields.setEmail(email);
         userRegistration.validateEmail(registrationFields.getEmail());
+
+        System.out.print("Enter mobile number: ");
+        String phoneNum = scanner.nextLine();
+
+        registrationFields.setPhoneNum(phoneNum);
+        userRegistration.validatePhoneNum(registrationFields.getPhoneNum());
+
     }
 }

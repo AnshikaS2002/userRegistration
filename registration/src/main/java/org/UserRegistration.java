@@ -40,4 +40,18 @@ public class UserRegistration {
         }
     }
 
+    void validatePhoneNum(String phoneNum) {
+        String numRegex = "[0-9]{2}\\s[0-9]{10}";
+        Pattern pattern = Pattern.compile(numRegex);
+        Matcher matcher = pattern.matcher(phoneNum);
+
+        System.out.println(phoneNum);
+
+        if (matcher.matches()) {
+            System.out.println("Valid Phone num");
+        } else {
+            System.out.println("Invalid phone num");
+        }
+    }
+
 }
