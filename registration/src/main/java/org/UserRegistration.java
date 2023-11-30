@@ -53,7 +53,7 @@ public class UserRegistration {
     }
 
     void validatePassword(String pass) {
-        String passRegex = ".*[A-Z].*";
+        String passRegex = "^(?=.*[A-Z])(?=.*\\d).*$";
         Pattern pattern = Pattern.compile(passRegex);
         Matcher matcher = pattern.matcher(pass);
 
