@@ -21,7 +21,8 @@ public class UserRegistration {
     }
 
     public boolean validateEmail(String email) {
-        String emailRegex = "[a-z0-9]+(\\.[a-z0-9]*)*@[a-z0-9]+\\.[a-z]+(\\.[a-z]*)*";
+        // String emailRegex = "^[\\w.+%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(\\.[A-Za-z]{2,})?$";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
 
