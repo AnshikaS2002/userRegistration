@@ -5,73 +5,79 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.InvalidEmailException;
+import org.InvalidFirstNameException;
+import org.InvalidLastNameException;
+import org.InvalidPasswordException;
+import org.InvalidPhoneNumException;
+
 public class MyTest {
 
     @Test
-    public void testFirstNameHappyCase() {
+    public void testFirstNameHappyCase() throws InvalidFirstNameException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res1 = userRegistration.validateFirstName("Anshika");
         assertTrue(res1);
     }
 
     @Test
-    public void testFirstNameSadCase() {
+    public void testFirstNameSadCase() throws InvalidFirstNameException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res2 = userRegistration.validateFirstName("anshika");
         assertTrue(res2);
     }
 
     @Test
-    public void testLastNameHappyCase() {
+    public void testLastNameHappyCase() throws InvalidLastNameException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res1 = userRegistration.validateLastName("Semwal");
         assertTrue(res1);
     }
 
     @Test
-    public void testLastNameSadCase() {
+    public void testLastNameSadCase() throws InvalidLastNameException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res2 = userRegistration.validateLastName("Se");
         assertTrue(res2);
     }
 
     @Test
-    public void testEmailHappyCase() {
+    public void testEmailHappyCase() throws InvalidEmailException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res1 = userRegistration.validateEmail("abc@gmail.com");
         assertTrue(res1);
     }
 
     @Test
-    public void testEmailSadCase() {
+    public void testEmailSadCase() throws InvalidEmailException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res2 = userRegistration.validateEmail("abcgmail.com");
         assertTrue(res2);
     }
 
     @Test
-    public void testPhoneNumHappyCase() {
+    public void testPhoneNumHappyCase() throws InvalidPhoneNumException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res1 = userRegistration.validatePhoneNum("91 9898877652");
         assertTrue(res1);
     }
 
     @Test
-    public void testPhoneNumSadCase() {
+    public void testPhoneNumSadCase() throws InvalidPhoneNumException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res2 = userRegistration.validatePhoneNum("9876987665");
         assertTrue(res2);
     }
 
     @Test
-    public void testPasswordHappyCase() {
+    public void testPasswordHappyCase() throws InvalidPasswordException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res1 = userRegistration.validatePassword("aAc@gmail3com");
         assertTrue(res1);
     }
 
     @Test
-    public void testPasswordSadCase() {
+    public void testPasswordSadCase() throws InvalidPasswordException {
         UserRegistration userRegistration = new UserRegistration();
         boolean res2 = userRegistration.validatePassword("aA#3");
         assertTrue(res2);
@@ -87,7 +93,7 @@ public class MyTest {
             "abc@1.com",
             "abc@gmail.com.com",
             "abc+100@gmail.com" })
-    public void testValidEmails(String email) {
+    public void testValidEmails(String email) throws InvalidEmailException {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateEmail(email);
         assertTrue(result);
@@ -109,7 +115,7 @@ public class MyTest {
             "abc@gmail.com.1a",
             "abc@gmail.com.aa.au"
     })
-    public void testInvalidEmails(String email) {
+    public void testInvalidEmails(String email) throws InvalidEmailException {
         UserRegistration userRegistration = new UserRegistration();
         boolean result = userRegistration.validateEmail(email);
         assertTrue(result);
